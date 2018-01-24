@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
+		
+		initializeTwitter()
+		
 		return true
 	}
 
@@ -40,7 +44,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
+}
 
+//MARK: - Twitter
+let twitterConsumerKey: String = "qOIrXUFwpHV4iFoPFLUsLKEj5"
+let twitterConsumerSecret: String = "kRfPs47THb3t9Dehwu3bKpyJtBzH23KsOtkFdBkqsvSGwdecTN"
 
+extension AppDelegate {
+	func initializeTwitter() {
+		TWTRTwitter.sharedInstance().start(withConsumerKey: twitterConsumerKey, consumerSecret: twitterConsumerSecret)
+	}
 }
 
