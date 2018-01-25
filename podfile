@@ -3,9 +3,14 @@ use_frameworks!
 inhibit_all_warnings!
 
 def common_pods
-	pod 'TwitterKit'
+	pod 'TwitterKit', '~> 3.0'
+	pod 'XLPagerTabStrip', '~> 8.0'
 end
 
 target 'TwitterClient' do
+	common_pods
+end
+
+target 'TwitterClientTests' do
 	common_pods
 end

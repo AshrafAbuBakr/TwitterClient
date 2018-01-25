@@ -54,5 +54,9 @@ extension AppDelegate {
 	func initializeTwitter() {
 		TWTRTwitter.sharedInstance().start(withConsumerKey: twitterConsumerKey, consumerSecret: twitterConsumerSecret)
 	}
+	
+	func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+		return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+	}
 }
 
