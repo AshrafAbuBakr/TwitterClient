@@ -24,6 +24,8 @@
 		F4040B19201A278800F92926 /* FollowersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4040B17201A278800F92926 /* FollowersListPresenter.swift */; };
 		F4040B1B201A279500F92926 /* FollowersListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4040B1A201A279500F92926 /* FollowersListService.swift */; };
 		F4040B1C201A279500F92926 /* FollowersListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4040B1A201A279500F92926 /* FollowersListService.swift */; };
+		F4040B1E201A838F00F92926 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4040B1D201A838F00F92926 /* FollowerTableViewCell.swift */; };
+		F4040B1F201A838F00F92926 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4040B1D201A838F00F92926 /* FollowerTableViewCell.swift */; };
 		F4FD926E2019104800F0DF29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD926D2019104800F0DF29 /* AppDelegate.swift */; };
 		F4FD92752019104800F0DF29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FD92742019104800F0DF29 /* Assets.xcassets */; };
 		F4FD92782019104800F0DF29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FD92762019104800F0DF29 /* LaunchScreen.storyboard */; };
@@ -62,6 +64,7 @@
 		F4040B14201A246800F92926 /* FollowersListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListModel.swift; sourceTree = "<group>"; };
 		F4040B17201A278800F92926 /* FollowersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListPresenter.swift; sourceTree = "<group>"; };
 		F4040B1A201A279500F92926 /* FollowersListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListService.swift; sourceTree = "<group>"; };
+		F4040B1D201A838F00F92926 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		F44BB59E3D818C9C2C128345 /* Pods_TwitterClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FD926A2019104800F0DF29 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FD926D2019104800F0DF29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 				F4040B1A201A279500F92926 /* FollowersListService.swift */,
 				F4040B11201A1ED700F92926 /* FollowersModel.swift */,
 				F4040B14201A246800F92926 /* FollowersListModel.swift */,
+				F4040B1D201A838F00F92926 /* FollowerTableViewCell.swift */,
 			);
 			path = Followers;
 			sourceTree = "<group>";
@@ -424,6 +428,7 @@
 				F4040B09201A0C6000F92926 /* TwitterTabsViewController.swift in Sources */,
 				F4040B18201A278800F92926 /* FollowersListPresenter.swift in Sources */,
 				F4FD926E2019104800F0DF29 /* AppDelegate.swift in Sources */,
+				F4040B1E201A838F00F92926 /* FollowerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +447,7 @@
 				F4040B0A201A0C6000F92926 /* TwitterTabsViewController.swift in Sources */,
 				F4040B19201A278800F92926 /* FollowersListPresenter.swift in Sources */,
 				F4FD929A2019429F00F0DF29 /* LoginService.swift in Sources */,
+				F4040B1F201A838F00F92926 /* FollowerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

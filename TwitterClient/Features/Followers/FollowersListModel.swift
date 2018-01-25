@@ -18,7 +18,7 @@ class FollowersListModel: Mappable {
 	var previous_cursor_str: String = ""
 	
 	required init?(map: Map) {
-		
+		print("Map")
 	}
 	
 	init() {

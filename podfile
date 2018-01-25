@@ -6,6 +6,8 @@ def common_pods
 	pod 'TwitterKit', '~> 3.0'
 	pod 'XLPagerTabStrip', '~> 8.0'
 	pod 'ObjectMapper'
+	pod 'Kingfisher', '~> 4.0'
+	pod 'BFKit-Swift'
 end
 
 target 'TwitterClient' do

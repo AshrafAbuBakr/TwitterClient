@@ -36,16 +36,18 @@ class TwitterHandler: NSObject {
 				completion(nil, connectionError)
 			}
 			
-			if let model: FollowersListModel = Mapper<FollowersListModel>().map(JSONObject: data, toObject: FollowersListModel()) {
-				completion(model, nil)
-			}
-			
 			do {
-				let json = try JSONSerialization.jsonObject(with: data!, options: [])
-				print("json: \(json)")
+				if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
+					if let model: FollowersListModel = Mapper<FollowersListModel>().map(JSONObject: json, toObject: FollowersListModel()) {
+						completion(model, nil)
+					}
+				}
+//				print("json: \(json)")
 			} catch let jsonError as NSError {
 				print("json error: \(jsonError.localizedDescription)")
 			}
+			
+			
 		}
 	}
 }
