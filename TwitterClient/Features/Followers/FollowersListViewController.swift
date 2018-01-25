@@ -11,10 +11,14 @@ import XLPagerTabStrip
 
 class FollowersListViewController: UIViewController {
 
+	var presenter: FollowersListPresenter?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		presenter = FollowersListPresenter(withView: self)
+		presenter?.getFollowersList()
     }
 
     override func didReceiveMemoryWarning() {

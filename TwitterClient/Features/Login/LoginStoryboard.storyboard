@@ -68,7 +68,7 @@
                     <connections>
                         <outlet property="logoView" destination="PRY-j6-UhW" id="9Xj-1K-8Lc"/>
                         <outlet property="twitterLoginButton" destination="4SQ-2k-oPY" id="Dx2-Ow-lLD"/>
-                        <segue destination="4sM-Sk-foa" kind="show" id="qSm-tC-ZJf"/>
+                        <segue destination="4sM-Sk-foa" kind="show" identifier="TabsSegue" id="qSm-tC-ZJf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ond-e7-ngP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,6 +89,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUk-SK-yQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-818" y="-100"/>
+        </scene>
+        <!--Followers List View Controller-->
+        <scene sceneID="Wk6-FX-xX8">
+            <objects>
+                <viewController storyboardIdentifier="followersListVC" id="a4R-ET-JeB" customClass="FollowersListViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NE7-Hg-ixz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1gJ-wt-K6r">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1gJ-wt-K6r" firstAttribute="bottom" secondItem="Euc-GD-9EC" secondAttribute="bottom" id="BEV-cc-e4Y"/>
+                            <constraint firstItem="1gJ-wt-K6r" firstAttribute="trailing" secondItem="Euc-GD-9EC" secondAttribute="trailing" id="LwM-4U-mya"/>
+                            <constraint firstItem="1gJ-wt-K6r" firstAttribute="top" secondItem="NE7-Hg-ixz" secondAttribute="top" id="Ozh-3I-fiB"/>
+                            <constraint firstItem="1gJ-wt-K6r" firstAttribute="leading" secondItem="Euc-GD-9EC" secondAttribute="leading" id="UyO-cM-tjF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Euc-GD-9EC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wju-PG-Hgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122.40000000000001" y="-100.29985007496252"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AtO-iZ-IMr">

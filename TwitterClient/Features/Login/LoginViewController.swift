@@ -41,6 +41,8 @@ extension LoginViewController {
 			_ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { [weak self] (timer) in
 				self?.showLoginButton()
 			})
+		} else {
+			performSegue(withIdentifier: "TabsSegue", sender: nil)
 		}
 	}
 	
@@ -51,7 +53,6 @@ extension LoginViewController {
 	}
 	
 	func showLoginButton() {
-		
 		twitterLoginButton.logInCompletion = {(session, error) in
 			if error == nil {
 				print("Logged In")
