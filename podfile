@@ -5,6 +5,12 @@ inhibit_all_warnings!
 def common_pods
 	pod 'TwitterKit', '~> 3.0'
 	pod 'XLPagerTabStrip', '~> 8.0'
+	pod 'ObjectMapper'
+	pod 'Kingfisher', '~> 4.0'
+	pod 'BFKit-Swift'
+	pod 'RealmSwift'
+	pod 'ObjectMapper+Realm'
+	pod 'ReachabilitySwift'
 end
 
 target 'TwitterClient' do

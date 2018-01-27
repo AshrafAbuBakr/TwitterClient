@@ -8,6 +8,7 @@
 
 import UIKit
 import TwitterKit
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		
 		initializeTwitter()
+		
 		
 		return true
 	}
