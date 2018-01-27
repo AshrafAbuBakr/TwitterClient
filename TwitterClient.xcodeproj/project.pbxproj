@@ -26,6 +26,14 @@
 		F4040B1C201A279500F92926 /* FollowersListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4040B1A201A279500F92926 /* FollowersListService.swift */; };
 		F4040B1E201A838F00F92926 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4040B1D201A838F00F92926 /* FollowerTableViewCell.swift */; };
 		F4040B1F201A838F00F92926 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4040B1D201A838F00F92926 /* FollowerTableViewCell.swift */; };
+		F4040B2D201B621900F92926 /* RealmHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4040B2C201B621900F92926 /* RealmHandler.swift */; };
+		F4040B2E201B621900F92926 /* RealmHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4040B2C201B621900F92926 /* RealmHandler.swift */; };
+		F45286D7201D42F500068014 /* FollowerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45286D6201D42F500068014 /* FollowerDetailsViewController.swift */; };
+		F45286D8201D42F500068014 /* FollowerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45286D6201D42F500068014 /* FollowerDetailsViewController.swift */; };
+		F45286DD201D43D600068014 /* tweetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45286DC201D43D600068014 /* tweetModel.swift */; };
+		F45286DE201D43D600068014 /* tweetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45286DC201D43D600068014 /* tweetModel.swift */; };
+		F45286E0201D474F00068014 /* FollowerDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45286DF201D474F00068014 /* FollowerDetailsService.swift */; };
+		F45286E1201D474F00068014 /* FollowerDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45286DF201D474F00068014 /* FollowerDetailsService.swift */; };
 		F4FD926E2019104800F0DF29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD926D2019104800F0DF29 /* AppDelegate.swift */; };
 		F4FD92752019104800F0DF29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FD92742019104800F0DF29 /* Assets.xcassets */; };
 		F4FD92782019104800F0DF29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FD92762019104800F0DF29 /* LaunchScreen.storyboard */; };
@@ -65,7 +73,12 @@
 		F4040B17201A278800F92926 /* FollowersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListPresenter.swift; sourceTree = "<group>"; };
 		F4040B1A201A279500F92926 /* FollowersListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListService.swift; sourceTree = "<group>"; };
 		F4040B1D201A838F00F92926 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
+		F4040B20201B45BA00F92926 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F4040B2C201B621900F92926 /* RealmHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHandler.swift; sourceTree = "<group>"; };
 		F44BB59E3D818C9C2C128345 /* Pods_TwitterClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45286D6201D42F500068014 /* FollowerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDetailsViewController.swift; sourceTree = "<group>"; };
+		F45286DC201D43D600068014 /* tweetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tweetModel.swift; sourceTree = "<group>"; };
+		F45286DF201D474F00068014 /* FollowerDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDetailsService.swift; sourceTree = "<group>"; };
 		F4FD926A2019104800F0DF29 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FD926D2019104800F0DF29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4FD92742019104800F0DF29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +117,7 @@
 		48B32664610D33D5E833D01A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4040B20201B45BA00F92926 /* CoreData.framework */,
 				F4040B012019E87600F92926 /* SafariServices.framework */,
 				53D05EE135E7DF8779FEF3BB /* Pods_TwitterClient.framework */,
 				F44BB59E3D818C9C2C128345 /* Pods_TwitterClientTests.framework */,
@@ -147,8 +161,26 @@
 			isa = PBXGroup;
 			children = (
 				F4040B03201A053800F92926 /* TwitterHandler.swift */,
+				F45286DC201D43D600068014 /* tweetModel.swift */,
 			);
 			path = TwitterKitFiles;
+			sourceTree = "<group>";
+		};
+		F4040B2B201B620400F92926 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				F4040B2C201B621900F92926 /* RealmHandler.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		F45286D5201D42B900068014 /* FollowerDetails */ = {
+			isa = PBXGroup;
+			children = (
+				F45286D6201D42F500068014 /* FollowerDetailsViewController.swift */,
+				F45286DF201D474F00068014 /* FollowerDetailsService.swift */,
+			);
+			path = FollowerDetails;
 			sourceTree = "<group>";
 		};
 		F4FD92612019104800F0DF29 = {
@@ -174,12 +206,13 @@
 		F4FD926C2019104800F0DF29 /* TwitterClient */ = {
 			isa = PBXGroup;
 			children = (
+				F4040B2B201B620400F92926 /* Realm */,
 				F4FD928D20191C0000F0DF29 /* Features */,
+				F4040B10201A1A6300F92926 /* TwitterKitFiles */,
 				F4FD926D2019104800F0DF29 /* AppDelegate.swift */,
 				F4FD92742019104800F0DF29 /* Assets.xcassets */,
 				F4FD92762019104800F0DF29 /* LaunchScreen.storyboard */,
 				F4FD92792019104800F0DF29 /* Info.plist */,
-				F4040B10201A1A6300F92926 /* TwitterKitFiles */,
 			);
 			path = TwitterClient;
 			sourceTree = "<group>";
@@ -196,6 +229,7 @@
 		F4FD928D20191C0000F0DF29 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F45286D5201D42B900068014 /* FollowerDetails */,
 				F4040B0C201A0FF600F92926 /* Followers */,
 				F4040B06201A0BFE00F92926 /* Tabs */,
 				F4FD928E20191C0D00F0DF29 /* Login */,
@@ -422,11 +456,15 @@
 				F4FD92962019428000F0DF29 /* LoginPresenter.swift in Sources */,
 				F4FD92932019337F00F0DF29 /* LoginViewController.swift in Sources */,
 				F4040B1B201A279500F92926 /* FollowersListService.swift in Sources */,
+				F45286DD201D43D600068014 /* tweetModel.swift in Sources */,
 				F4040B0E201A100E00F92926 /* FollowersListViewController.swift in Sources */,
+				F4040B2D201B621900F92926 /* RealmHandler.swift in Sources */,
+				F45286E0201D474F00068014 /* FollowerDetailsService.swift in Sources */,
 				F4FD92992019429F00F0DF29 /* LoginService.swift in Sources */,
 				F4040B15201A246800F92926 /* FollowersListModel.swift in Sources */,
 				F4040B09201A0C6000F92926 /* TwitterTabsViewController.swift in Sources */,
 				F4040B18201A278800F92926 /* FollowersListPresenter.swift in Sources */,
+				F45286D7201D42F500068014 /* FollowerDetailsViewController.swift in Sources */,
 				F4FD926E2019104800F0DF29 /* AppDelegate.swift in Sources */,
 				F4040B1E201A838F00F92926 /* FollowerTableViewCell.swift in Sources */,
 			);
@@ -441,11 +479,15 @@
 				F4FD92972019428000F0DF29 /* LoginPresenter.swift in Sources */,
 				F4FD92942019337F00F0DF29 /* LoginViewController.swift in Sources */,
 				F4040B1C201A279500F92926 /* FollowersListService.swift in Sources */,
+				F45286DE201D43D600068014 /* tweetModel.swift in Sources */,
 				F4040B0F201A100E00F92926 /* FollowersListViewController.swift in Sources */,
+				F4040B2E201B621900F92926 /* RealmHandler.swift in Sources */,
+				F45286E1201D474F00068014 /* FollowerDetailsService.swift in Sources */,
 				F4FD92832019104900F0DF29 /* TwitterClientTests.swift in Sources */,
 				F4040B16201A246800F92926 /* FollowersListModel.swift in Sources */,
 				F4040B0A201A0C6000F92926 /* TwitterTabsViewController.swift in Sources */,
 				F4040B19201A278800F92926 /* FollowersListPresenter.swift in Sources */,
+				F45286D8201D42F500068014 /* FollowerDetailsViewController.swift in Sources */,
 				F4FD929A2019429F00F0DF29 /* LoginService.swift in Sources */,
 				F4040B1F201A838F00F92926 /* FollowerTableViewCell.swift in Sources */,
 			);
@@ -589,7 +631,7 @@
 				INFOPLIST_FILE = TwitterClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eventtus.twitterClient.TwitterClient;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eventtus.twitterClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

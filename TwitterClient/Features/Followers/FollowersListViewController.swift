@@ -8,12 +8,13 @@
 
 import UIKit
 import XLPagerTabStrip
+import RealmSwift
 
 class FollowersListViewController: UIViewController {
 
 	@IBOutlet weak var followersTableView: UITableView!
 	var presenter: FollowersListPresenter?
-	var followers: [FollowersModel]?
+	var followers: List<FollowersModel>?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class FollowersListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	
-	func setupFollowersTable(withFollowers followers: [FollowersModel]) {
+	func setupFollowersTable(withFollowers followers: List<FollowersModel>) {
 		self.followers = followers
 		followersTableView.estimatedRowHeight = 106
 		followersTableView.rowHeight = UITableViewAutomaticDimension

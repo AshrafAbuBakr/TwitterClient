@@ -6,26 +6,29 @@
 //  Copyright © 2018 Eventtus. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import ObjectMapper
+import RealmSwift
+import ObjectMapper_Realm
 
-class FollowersModel: Mappable {
+class FollowersModel: Object, Mappable {
 	
-	var id_str: String?
-	var name: String = ""
-	var screen_name: String = ""
-	var followers_count: Int = 0
-	var friends_count: Int = 0
-	var profile_background_image_url_https: String?
-	var profile_image_url_https: String?
-	var bio: String?
+	@objc dynamic var id_str: String?
+	@objc dynamic var name: String = ""
+	@objc dynamic var screen_name: String = ""
+	@objc dynamic var followers_count: Int = 0
+	@objc dynamic var friends_count: Int = 0
+	@objc dynamic var profile_background_image_url_https: String?
+	@objc dynamic var profile_image_url_https: String?
+	@objc dynamic var bio: String?
 	
-	required init?(map: Map) {
-		
+	required convenience init?(map: Map) {
+		self.init()
 	}
 	
-	init() {
-		
+	//Used "next_cursor" as there will only be one item at any time.
+	override class func primaryKey() -> String? {
+		return "id_str"
 	}
 	
 	func mapping(map: Map) {

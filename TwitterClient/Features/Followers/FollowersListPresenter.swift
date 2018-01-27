@@ -29,7 +29,9 @@ class FollowersListPresenter: NSObject {
 	func getFollowersList() {
 		service?.getFollowersList(withCompletion: {[weak self] (responseObject, error) in
 			if error == nil {
-				self?.view?.setupFollowersTable(withFollowers: (responseObject?.users)!)
+				if let followers = responseObject?.users {
+					self?.view?.setupFollowersTable(withFollowers: followers)
+				}
 				print("Success")
 			} else {
 				print("Failure")

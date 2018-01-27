@@ -8,6 +8,9 @@ def common_pods
 	pod 'ObjectMapper'
 	pod 'Kingfisher', '~> 4.0'
 	pod 'BFKit-Swift'
+	pod 'RealmSwift'
+	pod 'ObjectMapper+Realm'
+	pod 'ReachabilitySwift'
 end
 
 target 'TwitterClient' do

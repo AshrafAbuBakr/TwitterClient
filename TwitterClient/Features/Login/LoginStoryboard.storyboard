@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUk-SK-yQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-818" y="-100"/>
+            <point key="canvasLocation" x="-818" y="-86"/>
         </scene>
         <!--Followers List View Controller-->
         <scene sceneID="Wk6-FX-xX8">
@@ -173,6 +174,7 @@
                                             <outlet property="followerImageView" destination="mI2-NF-nQC" id="Vli-kT-liG"/>
                                             <outlet property="followerNameLabel" destination="RiW-tP-mZi" id="QKH-t1-oRc"/>
                                             <outlet property="separatorView" destination="cVJ-mu-KhF" id="6IZ-Nr-cXO"/>
+                                            <segue destination="4XB-At-eDc" kind="show" id="HbM-cK-FKS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -217,6 +219,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Eb-NG-dLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1543" y="-815"/>
+        </scene>
+        <!--Twitter Tabs View Controller-->
+        <scene sceneID="gLj-vb-Vkv">
+            <objects>
+                <viewController id="4XB-At-eDc" customClass="TwitterTabsViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GpX-XC-RS1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26u-RO-ZUi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jxd-fG-nFO">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="375" id="RXq-ju-BmH"/>
+                                            <constraint firstAttribute="width" secondItem="jxd-fG-nFO" secondAttribute="height" multiplier="375:256" id="wKv-dg-dIF"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q1Y-g8-xb4">
+                                        <rect key="frame" x="147" y="213" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="CXF-QM-WH2"/>
+                                            <constraint firstAttribute="height" constant="80" id="EAw-Pt-XdC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@handle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3s-TM-Rvm">
+                                        <rect key="frame" x="0.0" y="301" width="375" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-Dv-mQq">
+                                        <rect key="frame" x="0.0" y="330" width="375" height="337"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="337" id="n8f-PK-Gw7"/>
+                                        </constraints>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Z3s-TM-Rvm" firstAttribute="top" secondItem="Q1Y-g8-xb4" secondAttribute="bottom" constant="8" id="8vp-Ze-OEH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z3s-TM-Rvm" secondAttribute="trailing" id="Ajo-8t-A6j"/>
+                                    <constraint firstItem="CXc-Dv-mQq" firstAttribute="leading" secondItem="26u-RO-ZUi" secondAttribute="leading" id="BQs-bV-2lX"/>
+                                    <constraint firstItem="jxd-fG-nFO" firstAttribute="leading" secondItem="26u-RO-ZUi" secondAttribute="leading" id="DeF-60-SVY"/>
+                                    <constraint firstItem="jxd-fG-nFO" firstAttribute="top" secondItem="26u-RO-ZUi" secondAttribute="top" id="L0B-zn-sRJ"/>
+                                    <constraint firstItem="CXc-Dv-mQq" firstAttribute="top" secondItem="Z3s-TM-Rvm" secondAttribute="bottom" constant="8" id="LHN-Do-hz8"/>
+                                    <constraint firstItem="Z3s-TM-Rvm" firstAttribute="leading" secondItem="26u-RO-ZUi" secondAttribute="leading" id="RoV-pa-Jfi"/>
+                                    <constraint firstAttribute="bottom" secondItem="CXc-Dv-mQq" secondAttribute="bottom" id="c9d-Pc-tBL"/>
+                                    <constraint firstItem="Q1Y-g8-xb4" firstAttribute="top" secondItem="jxd-fG-nFO" secondAttribute="bottom" constant="-43" id="cIJ-ZH-PBW"/>
+                                    <constraint firstAttribute="trailing" secondItem="jxd-fG-nFO" secondAttribute="trailing" id="fzm-ur-YbA"/>
+                                    <constraint firstItem="Q1Y-g8-xb4" firstAttribute="centerX" secondItem="26u-RO-ZUi" secondAttribute="centerX" id="gMZ-Cd-3vg"/>
+                                    <constraint firstAttribute="trailing" secondItem="CXc-Dv-mQq" secondAttribute="trailing" id="jtD-DI-WBf"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="26u-RO-ZUi" firstAttribute="top" secondItem="GpX-XC-RS1" secondAttribute="top" id="Jnm-9V-Kbz"/>
+                            <constraint firstItem="26u-RO-ZUi" firstAttribute="trailing" secondItem="79i-RQ-aYJ" secondAttribute="trailing" id="QLp-DV-WSx"/>
+                            <constraint firstItem="Z3s-TM-Rvm" firstAttribute="width" secondItem="GpX-XC-RS1" secondAttribute="width" id="gXo-tT-8Xl"/>
+                            <constraint firstItem="26u-RO-ZUi" firstAttribute="bottom" secondItem="79i-RQ-aYJ" secondAttribute="bottom" id="iPW-wX-GqA"/>
+                            <constraint firstItem="26u-RO-ZUi" firstAttribute="leading" secondItem="79i-RQ-aYJ" secondAttribute="leading" id="tja-ni-ZkX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="79i-RQ-aYJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYU-L9-6cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="680.79999999999995" y="-100.29985007496252"/>
         </scene>
     </scenes>
     <resources>
