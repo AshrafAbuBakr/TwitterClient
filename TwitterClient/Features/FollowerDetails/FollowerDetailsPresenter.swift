@@ -25,11 +25,15 @@ class FollowerDetailsPresenter: NSObject {
 	}
 	
 	func getFollowerTweets(forScreenName screenName: String) {
+		view?.showLoadingIndicator()
 		service?.getFollowerTweets(forScreenName: screenName, andCompletion: {[weak self] (tweets, error) in
+			self?.view?.hideLoadingIndicator()
 			if error == nil {
 				self?.view?.setupTweetsTableView(withTweets: tweets!)
+			} else {
+				self?.view?.showError(withMessage: "An error Occured")
+				self?.view?.noTweetsAvailableLabel.isHidden = false
 			}
-			
 			
 		})
 		

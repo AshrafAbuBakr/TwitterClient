@@ -11,9 +11,11 @@ import Kingfisher
 import TwitterKit
 import BFKit
 
-class FollowerDetailsViewController: UIViewController {
+class FollowerDetailsViewController: UIViewController, BaseViewProtocol {
 
 	@IBOutlet weak var tweetsTableView: UITableView!
+	@IBOutlet weak var noTweetsAvailableLabel: UILabel!
+	
 	var defaultColorImage: UIImage?
 	var follower: FollowersModel?
 	var presenter: FollowerDetailsPresenter?

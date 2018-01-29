@@ -11,6 +11,7 @@ def common_pods
 	pod 'RealmSwift'
 	pod 'ObjectMapper+Realm'
 	pod 'ReachabilitySwift'
+	pod 'NVActivityIndicatorView'
 end
 
 target 'TwitterClient' do

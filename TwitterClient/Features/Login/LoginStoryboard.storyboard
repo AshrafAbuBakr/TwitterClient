@@ -188,6 +188,12 @@
                                     <outlet property="delegate" destination="a4R-ET-JeB" id="0Yt-HV-DpI"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Followers Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7p-Vu-afX">
+                                <rect key="frame" x="73.5" y="321.5" width="228" height="25.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" white="0.3358983331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -195,11 +201,14 @@
                             <constraint firstItem="1gJ-wt-K6r" firstAttribute="trailing" secondItem="Euc-GD-9EC" secondAttribute="trailing" id="LwM-4U-mya"/>
                             <constraint firstItem="1gJ-wt-K6r" firstAttribute="top" secondItem="NE7-Hg-ixz" secondAttribute="top" id="Ozh-3I-fiB"/>
                             <constraint firstItem="1gJ-wt-K6r" firstAttribute="leading" secondItem="Euc-GD-9EC" secondAttribute="leading" id="UyO-cM-tjF"/>
+                            <constraint firstItem="W7p-Vu-afX" firstAttribute="centerX" secondItem="NE7-Hg-ixz" secondAttribute="centerX" id="oyo-1F-OtG"/>
+                            <constraint firstItem="W7p-Vu-afX" firstAttribute="centerY" secondItem="NE7-Hg-ixz" secondAttribute="centerY" id="yTP-fM-cgz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Euc-GD-9EC"/>
                     </view>
                     <connections>
                         <outlet property="followersTableView" destination="1gJ-wt-K6r" id="yH6-oR-N26"/>
+                        <outlet property="noFollowersAvailableLabel" destination="W7p-Vu-afX" id="P1D-2B-W3o"/>
                         <segue destination="4XB-At-eDc" kind="show" identifier="followerDetailsSegue" id="UTe-s1-OsD"/>
                     </connections>
                 </viewController>
@@ -319,17 +328,26 @@
                                     <outlet property="delegate" destination="4XB-At-eDc" id="Nc0-zT-nMu"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Tweets Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXi-cX-CMa">
+                                <rect key="frame" x="87.5" y="321" width="201" height="25.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" white="0.3358983331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.92549019607843142" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CXc-Dv-mQq" firstAttribute="leading" secondItem="79i-RQ-aYJ" secondAttribute="leading" id="6D5-tE-DRP"/>
+                            <constraint firstItem="nXi-cX-CMa" firstAttribute="centerY" secondItem="GpX-XC-RS1" secondAttribute="centerY" id="BlN-dW-dDQ"/>
                             <constraint firstItem="CXc-Dv-mQq" firstAttribute="top" secondItem="79i-RQ-aYJ" secondAttribute="top" id="Ul5-ll-Rtf"/>
                             <constraint firstItem="CXc-Dv-mQq" firstAttribute="trailing" secondItem="79i-RQ-aYJ" secondAttribute="trailing" id="mbK-hg-dnC"/>
                             <constraint firstItem="79i-RQ-aYJ" firstAttribute="bottom" secondItem="CXc-Dv-mQq" secondAttribute="bottom" id="skE-ei-Tce"/>
+                            <constraint firstItem="nXi-cX-CMa" firstAttribute="centerX" secondItem="GpX-XC-RS1" secondAttribute="centerX" id="yoi-MK-QYN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="79i-RQ-aYJ"/>
                     </view>
                     <connections>
+                        <outlet property="noTweetsAvailableLabel" destination="nXi-cX-CMa" id="xG6-cn-t3f"/>
                         <outlet property="tweetsTableView" destination="CXc-Dv-mQq" id="LAD-Za-w9E"/>
                     </connections>
                 </viewController>
