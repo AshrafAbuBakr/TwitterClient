@@ -67,6 +67,7 @@ class TwitterHandler: NSObject {
 		client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
 			if connectionError != nil {
 				completion(nil, connectionError)
+				return
 			}
 			
 			do {
@@ -74,7 +75,7 @@ class TwitterHandler: NSObject {
 					var tweets: [tweetModel] = [tweetModel]()
 					for var dict in json {
 						dict["userScreenName"] = screenName
-						if let model: tweetModel = Mapper<tweetModel>().map(JSONObject: json, toObject: tweetModel()) {
+						if let model: tweetModel = Mapper<tweetModel>().map(JSONObject: dict, toObject: tweetModel()) {
 							tweets.append(model)
 						}
 					}

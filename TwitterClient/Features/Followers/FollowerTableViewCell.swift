@@ -17,6 +17,7 @@ class FollowerTableViewCell: UITableViewCell {
 	@IBOutlet weak var followerHandleLabel: UILabel!
 	@IBOutlet weak var followerBioLabel: UILabel!
 	@IBOutlet weak var separatorView: UIView!
+	var follower: FollowersModel?
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,6 +41,7 @@ class FollowerTableViewCell: UITableViewCell {
 		followerNameLabel.text = follower.name
 		followerHandleLabel.text = "@\(follower.screen_name)"
 		followerBioLabel.text = follower.bio
+		self.follower = follower
 	}
 
 }

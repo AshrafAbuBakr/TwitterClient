@@ -19,6 +19,7 @@ class tweetModel: Object, Mappable {
 	@objc dynamic var id_str: String?
 	@objc dynamic var text: String?
 	@objc dynamic var userScreenName: String?
+	@objc dynamic var created_at: String?
 	
 	required convenience init?(map: Map) {
 		self.init()
@@ -32,5 +33,6 @@ class tweetModel: Object, Mappable {
 		id_str <- map["id_str"]
 		text <- map["text"]
 		userScreenName <- map["userScreenName"]
+		created_at <- map["created_at"]
 	}
 }
