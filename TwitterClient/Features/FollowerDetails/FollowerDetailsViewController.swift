@@ -56,7 +56,7 @@ class FollowerDetailsViewController: UIViewController {
 	
 	func setupTweetsTableView(withTweets tweetsList: [tweetModel]) {
 		tweets = tweetsList
-		tweetsTableView.estimatedRowHeight = 80
+		tweetsTableView.estimatedRowHeight = 120
 		tweetsTableView.rowHeight = UITableViewAutomaticDimension
 		tweetsTableView.reloadData()
 	}
@@ -75,11 +75,6 @@ extension FollowerDetailsViewController: UITableViewDelegate, UITableViewDataSou
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetTableViewCell
 		cell.setupCell(withTweet: tweets![indexPath.row])
-//		if indexPath.row == (followers?.count)! - 1 {
-//			cell.separatorView.isHidden = true
-//		} else {
-//			cell.separatorView.isHidden = false
-//		}
 		return cell
 	}
 	
@@ -88,12 +83,4 @@ extension FollowerDetailsViewController: UITableViewDelegate, UITableViewDataSou
 		let offsetY = scrollView.contentOffset.y
 		stretchingHeader?.updateView(withScrollviewOffset: offsetY)
 	}
-	
-//	- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//	{
-//	CGFloat offsetY = scrollView.contentOffset.y;
-//	UIView *headerContentView = self.tableView.tableHeaderView.subviews[0];
-//	headerContentView.transform = CGAffineTransformMakeTranslation(0, MIN(offsetY, 0));
-//	}
-	
 }

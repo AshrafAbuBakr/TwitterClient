@@ -55,6 +55,7 @@ class StickyHeaderView: UIView {
 			}
 		}
 		
+		
 		if follower.screen_name .length > 0 {
 			handleLabel.text = "@\(follower.screen_name)"
 		}

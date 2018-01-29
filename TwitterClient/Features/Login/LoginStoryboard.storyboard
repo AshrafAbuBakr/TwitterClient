@@ -104,7 +104,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowerCell" rowHeight="106" id="ksZ-Wh-ReB" customClass="FollowerTableViewCell" customModule="TwitterClient" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FollowerCell" rowHeight="106" id="ksZ-Wh-ReB" customClass="FollowerTableViewCell" customModule="TwitterClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ksZ-Wh-ReB" id="QED-g1-5PN">
@@ -231,32 +231,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-Dv-mQq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-Dv-mQq">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="94" id="gxd-jJ-vNB" customClass="TweetTableViewCell" customModule="TwitterClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="94"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="120" id="gxd-jJ-vNB" customClass="TweetTableViewCell" customModule="TwitterClient" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gxd-jJ-vNB" id="RSj-Bq-bCq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="93.5"/>
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gxd-jJ-vNB" id="RSj-Bq-bCq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFO-Qd-VoQ">
-                                                    <rect key="frame" x="19" y="36" width="337" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbv-O0-aCb">
+                                                    <rect key="frame" x="15" y="5" width="345" height="110"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tweetIcon" translatesAutoresizingMaskIntoConstraints="NO" id="G91-ua-Qc6">
+                                                            <rect key="frame" x="307" y="8" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="4PH-le-Xd0"/>
+                                                                <constraint firstAttribute="width" constant="30" id="yee-lg-eHd"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFO-Qd-VoQ">
+                                                            <rect key="frame" x="15" y="48" width="315" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eS3-S7-Eca">
+                                                            <rect key="frame" x="227" y="86" width="110" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="110" id="GkH-c7-a7S"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="eS3-S7-Eca" secondAttribute="bottom" constant="3" id="1nV-jF-5LJ"/>
+                                                        <constraint firstItem="eS3-S7-Eca" firstAttribute="trailing" secondItem="G91-ua-Qc6" secondAttribute="trailing" id="DT1-gA-bPF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="gFO-Qd-VoQ" secondAttribute="trailing" constant="15" id="TPh-jc-NU0"/>
+                                                        <constraint firstItem="eS3-S7-Eca" firstAttribute="top" secondItem="gFO-Qd-VoQ" secondAttribute="bottom" constant="18.5" id="Uew-Yx-6aA"/>
+                                                        <constraint firstItem="G91-ua-Qc6" firstAttribute="top" secondItem="Rbv-O0-aCb" secondAttribute="top" constant="8" id="biO-Dh-YXB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="G91-ua-Qc6" secondAttribute="trailing" constant="8" id="qMN-Sh-KTH"/>
+                                                        <constraint firstItem="gFO-Qd-VoQ" firstAttribute="leading" secondItem="Rbv-O0-aCb" secondAttribute="leading" constant="15" id="wT4-nJ-kbe"/>
+                                                        <constraint firstItem="gFO-Qd-VoQ" firstAttribute="top" secondItem="G91-ua-Qc6" secondAttribute="bottom" constant="10" id="zZA-Qi-DAT"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.6705882352941176" green="0.72156862745098038" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="gFO-Qd-VoQ" firstAttribute="top" secondItem="RSj-Bq-bCq" secondAttribute="top" constant="36" id="6KM-2S-KFg"/>
-                                                <constraint firstItem="gFO-Qd-VoQ" firstAttribute="leading" secondItem="RSj-Bq-bCq" secondAttribute="leading" constant="19" id="Efq-XL-PFa"/>
-                                                <constraint firstAttribute="trailing" secondItem="gFO-Qd-VoQ" secondAttribute="trailing" constant="19" id="Ird-B7-iGH"/>
-                                                <constraint firstAttribute="bottom" secondItem="gFO-Qd-VoQ" secondAttribute="bottom" constant="36.5" id="tKR-Xj-vjo"/>
+                                                <constraint firstItem="Rbv-O0-aCb" firstAttribute="leading" secondItem="RSj-Bq-bCq" secondAttribute="leading" constant="15" id="0ad-df-5od"/>
+                                                <constraint firstItem="Rbv-O0-aCb" firstAttribute="top" secondItem="RSj-Bq-bCq" secondAttribute="top" constant="5" id="OB3-VV-skG"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rbv-O0-aCb" secondAttribute="trailing" constant="15" id="PUU-Gi-ei8"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rbv-O0-aCb" secondAttribute="bottom" constant="5" id="s9t-tB-BfM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="dateLabel" destination="eS3-S7-Eca" id="sfR-aK-Z23"/>
                                             <outlet property="tweetTextLabel" destination="gFO-Qd-VoQ" id="4rT-m2-8Sc"/>
                                         </connections>
                                     </tableViewCell>
@@ -267,7 +313,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.92549019607843142" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CXc-Dv-mQq" firstAttribute="leading" secondItem="79i-RQ-aYJ" secondAttribute="leading" id="6D5-tE-DRP"/>
                             <constraint firstItem="CXc-Dv-mQq" firstAttribute="top" secondItem="79i-RQ-aYJ" secondAttribute="top" id="Ul5-ll-Rtf"/>
@@ -286,6 +332,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="tweetIcon" width="1200" height="1200"/>
         <image name="twitterLogo_White" width="750" height="612"/>
     </resources>
 </document>
