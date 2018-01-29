@@ -15,6 +15,7 @@ class FollowersListViewController: UIViewController {
 	@IBOutlet weak var followersTableView: UITableView!
 	var presenter: FollowersListPresenter?
 	var followers: List<FollowersModel>?
+	var selectedFollower: FollowersModel?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,14 @@ class FollowersListViewController: UIViewController {
 		followersTableView.estimatedRowHeight = 106
 		followersTableView.rowHeight = UITableViewAutomaticDimension
 		followersTableView.reloadData()
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "followerDetailsSegue" {
+			if let detailsVC = segue.destination as? FollowerDetailsViewController {
+				detailsVC.follower = selectedFollower
+			}
+		}
 	}
 }
 
@@ -56,6 +65,13 @@ extension FollowersListViewController: UITableViewDataSource, UITableViewDelegat
 			cell.separatorView.isHidden = false
 		}
 		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if let cell = tableView.cellForRow(at: indexPath) as? FollowerTableViewCell {
+			selectedFollower = cell.follower
+			performSegue(withIdentifier: "followerDetailsSegue", sender: nil)
+		}
 	}
 }
 

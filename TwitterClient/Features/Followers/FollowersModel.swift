@@ -21,6 +21,7 @@ class FollowersModel: Object, Mappable {
 	@objc dynamic var profile_background_image_url_https: String?
 	@objc dynamic var profile_image_url_https: String?
 	@objc dynamic var bio: String?
+	@objc dynamic var profile_background_color: String?
 	
 	required convenience init?(map: Map) {
 		self.init()
@@ -39,6 +40,7 @@ class FollowersModel: Object, Mappable {
 		profile_background_image_url_https <- map["profile_background_image_url_https"]
 		profile_image_url_https <- map["profile_image_url_https"]
 		bio <- map["description"]
+		profile_background_color <- map["profile_background_color"]
 	}
 
 }
