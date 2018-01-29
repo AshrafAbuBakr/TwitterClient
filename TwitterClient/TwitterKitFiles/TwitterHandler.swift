@@ -44,7 +44,7 @@ class TwitterHandler: NSObject {
 			
 			do {
 				if var json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] {
-					json["userID"] = TwitterHandler.curretUserID() as! String
+					json["userID"] = TwitterHandler.curretUserID()
 					if let model: FollowersListModel = Mapper<FollowersListModel>().map(JSONObject: json, toObject: FollowersListModel()) {
 						completion(model, nil)
 					}

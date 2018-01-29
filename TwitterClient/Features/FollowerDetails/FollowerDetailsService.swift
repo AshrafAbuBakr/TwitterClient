@@ -16,24 +16,23 @@ class FollowerDetailsService: NSObject {
 	
 	func getFollowerTweets(forScreenName screenName: String, andCompletion completion: @escaping TweetsCompletionClosure) {
 		
-//		if reachability.connection != .none  {
+		if reachability.connection != .none  {
 			TwitterHandler.getTweets(withscreenName: screenName) {[weak self] (tweets, error) in
 				if error == nil {
 					completion(tweets, nil)
 					self?.tweets = tweets
-//					RealmHandler.saveFollowers(followersListObject: responseObject!)
+					RealmHandler.saveTweets(tweets!)
 				} else {
 					completion(nil, error)
 				}
 			}
-//		} else {
-//			if let userID = TwitterHandler.curretUserID() {
-//				if let responseObject = RealmHandler.getSavedFollowers(forUserID: userID) {
-//					followersListObject = responseObject
-//					completion(responseObject, nil)
-//				}
-//			}
-//			
-//		}
+		} else {
+			if let _ = TwitterHandler.curretUserID() {
+				if let responseObject = RealmHandler.getSavedTweets(forScreenName: screenName) {
+					completion(responseObject, nil)
+				}
+			}
+			
+		}
 	}
 }
