@@ -26,6 +26,8 @@ class FollowersListPresenter: NSObject {
 		self.view = view
 	}
 	
+	
+	/// Retreives list of logged in user's followers.
 	func getFollowersList() {
 		view?.showLoadingIndicator()
 		service?.getFollowersList(withCompletion: {[weak self] (responseObject, error) in

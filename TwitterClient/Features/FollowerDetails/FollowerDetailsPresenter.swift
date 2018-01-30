@@ -10,6 +10,7 @@ import UIKit
 
 class FollowerDetailsPresenter: NSObject {
 	
+	//MARK: Variables
 	var service: FollowerDetailsService?
 	weak var view: FollowerDetailsViewController?
 	
@@ -24,6 +25,10 @@ class FollowerDetailsPresenter: NSObject {
 		self.view = view
 	}
 	
+	
+	/// Retreive the latest follower's tweets.
+	///
+	/// - Parameter screenName: Follower's screen name.
 	func getFollowerTweets(forScreenName screenName: String) {
 		view?.showLoadingIndicator()
 		service?.getFollowerTweets(forScreenName: screenName, andCompletion: {[weak self] (tweets, error) in

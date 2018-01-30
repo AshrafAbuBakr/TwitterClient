@@ -36,7 +36,10 @@ class StickyHeaderView: UIView {
 		
 	}
 	
-	
+
+	/// Uses data from a follower object to fill the data in the view.
+	///
+	/// - Parameter follower: the follower of whom the details are showing.
 	func setupView(withFollower follower: FollowersModel) {
 		
 		backgroundTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundImageTapped))
@@ -70,6 +73,9 @@ class StickyHeaderView: UIView {
 		}
 	}
 	
+	
+	
+	/// Shows the background image in an overlay when tapped
 	@objc private func backgroundImageTapped() {
 		let canceltapGesture = UITapGestureRecognizer(target: self, action: #selector(removeImage))
 		let containerView = UIView(frame: UIScreen.main.bounds, backgroundColor: UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6))
@@ -90,6 +96,7 @@ class StickyHeaderView: UIView {
 		}
 	}
 	
+	/// Shows the follower image in an overlay when tapped
 	@objc private func followerImageTapped() {
 		let canceltapGesture = UITapGestureRecognizer(target: self, action: #selector(removeImage))
 		let containerView = UIView(frame: UIScreen.main.bounds, backgroundColor: UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6))
@@ -112,6 +119,7 @@ class StickyHeaderView: UIView {
 		
 	}
 	
+	/// Removes the currently showing image overlay.
 	@objc private func removeImage() {
 		if let container = UIApplication.shared.keyWindow?.viewWithTag(-999) {
 			UIView.animate(withDuration: 0.3, animations: {
@@ -124,6 +132,10 @@ class StickyHeaderView: UIView {
 		
 	}
 	
+	
+	/// Updates the background image based on the scrolling offset to create a stretching effect.
+	///
+	/// - Parameter offsetY: current scrollview offset.
 	func updateView(withScrollviewOffset offsetY: CGFloat) {
 		if offsetY < 0 {
 			backgroundImageView.frame = CGRect(x: offsetY ,y: offsetY, width: self.bounds.width - (offsetY * 2) , height: self.bounds.height - 66 - offsetY);

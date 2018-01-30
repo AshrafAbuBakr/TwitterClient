@@ -14,6 +14,12 @@ class FollowerDetailsService: NSObject {
 	let reachability: Reachability = Reachability()!
 	var tweets: [tweetModel]?
 	
+	
+	/// Retreives the latest 10 tweets sent by the follower.
+	///
+	/// - Parameters:
+	///   - screenName: Follower's screen name.
+	///   - completion: Request completion handler.
 	func getFollowerTweets(forScreenName screenName: String, andCompletion completion: @escaping TweetsCompletionClosure) {
 		
 		if reachability.connection != .none  {

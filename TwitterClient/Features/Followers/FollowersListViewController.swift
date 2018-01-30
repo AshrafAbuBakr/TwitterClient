@@ -12,6 +12,7 @@ import RealmSwift
 
 class FollowersListViewController: UIViewController, BaseViewProtocol {
 
+	//MARK: - Outlets
 	@IBOutlet weak var followersTableView: UITableView!
 	@IBOutlet weak var noFollowersAvailableLabel: UILabel!
 	

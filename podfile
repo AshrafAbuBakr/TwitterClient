@@ -3,15 +3,15 @@ use_frameworks!
 inhibit_all_warnings!
 
 def common_pods
-	pod 'TwitterKit', '~> 3.0'
-	pod 'XLPagerTabStrip', '~> 8.0'
-	pod 'ObjectMapper'
-	pod 'Kingfisher', '~> 4.0'
-	pod 'BFKit-Swift'
-	pod 'RealmSwift'
+	pod 'TwitterKit', '~> 3.0' #Twitter SDK.
+	pod 'XLPagerTabStrip', '~> 8.0' # Twitter tabs control.
+	pod 'ObjectMapper' #Json parsing library.
+	pod 'Kingfisher', '~> 4.0' #Image caching and async. loading.
+	pod 'BFKit-Swift' #Swift conveninece methods.
+	pod 'RealmSwift' #Realm database for swift.
 	pod 'ObjectMapper+Realm'
-	pod 'ReachabilitySwift'
-	pod 'NVActivityIndicatorView'
+	pod 'ReachabilitySwift' #Connection checking and handling.
+	pod 'NVActivityIndicatorView' #Loading indicator.
 end
 
 target 'TwitterClient' do
