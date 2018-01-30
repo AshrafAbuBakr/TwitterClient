@@ -8,6 +8,7 @@
 
 import UIKit
 import TwitterKit
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		
 		initializeTwitter()
+		
 		
 		return true
 	}
@@ -53,6 +55,10 @@ let twitterConsumerSecret: String = "kRfPs47THb3t9Dehwu3bKpyJtBzH23KsOtkFdBkqsvS
 extension AppDelegate {
 	func initializeTwitter() {
 		TWTRTwitter.sharedInstance().start(withConsumerKey: twitterConsumerKey, consumerSecret: twitterConsumerSecret)
+	}
+	
+	func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+		return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
 	}
 }
 
