@@ -15,6 +15,9 @@ Installation and Dependencies:
 	    - ReachabilitySwift
 	    - NVActivityIndicatorView
 
+Git:
+    - This project uses the standard gitflow.
+
 Architecture & Design:
     - The project is follows the MVP design pattern.
     - Each Viewcontroller has a presenter and a service. EX: (FollowersListViewController, FollowersListPresenter, FollowersListService).
