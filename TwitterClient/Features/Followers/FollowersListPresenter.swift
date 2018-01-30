@@ -26,15 +26,20 @@ class FollowersListPresenter: NSObject {
 		self.view = view
 	}
 	
+	
+	/// Retreives list of logged in user's followers.
 	func getFollowersList() {
+		view?.showLoadingIndicator()
 		service?.getFollowersList(withCompletion: {[weak self] (responseObject, error) in
 			if error == nil {
 				if let followers = responseObject?.users {
+					self?.view?.hideLoadingIndicator()
 					self?.view?.setupFollowersTable(withFollowers: followers)
 				}
-				print("Success")
 			} else {
-				print("Failure")
+				self?.view?.hideLoadingIndicator()
+				self?.view?.showError(withMessage: "An Error Occured")
+				self?.view?.noFollowersAvailableLabel.isHidden = false
 			}
 		})
 	}

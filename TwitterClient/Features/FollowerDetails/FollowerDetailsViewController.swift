@@ -11,9 +11,13 @@ import Kingfisher
 import TwitterKit
 import BFKit
 
-class FollowerDetailsViewController: UIViewController {
+class FollowerDetailsViewController: UIViewController, BaseViewProtocol {
 
+	//MARK: - Outlets
 	@IBOutlet weak var tweetsTableView: UITableView!
+	@IBOutlet weak var noTweetsAvailableLabel: UILabel!
+	
+	//MARK: - Variables
 	var defaultColorImage: UIImage?
 	var follower: FollowersModel?
 	var presenter: FollowerDetailsPresenter?
@@ -40,6 +44,10 @@ class FollowerDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	
+	
+	/// Instantiates the UI using data from the follower.
+	///
+	/// - Parameter follower: The follower of whom the current details are showing.
 	func setup(withFollower follower: FollowersModel) {
 		
 		navigationItem.title = follower.name
@@ -54,6 +62,10 @@ class FollowerDetailsViewController: UIViewController {
 		navigationController?.popViewController(animated: true)
 	}
 	
+	
+	/// Setups the table view with tweets retreived from BE.
+	///
+	/// - Parameter tweetsList: a list containing user's latest tweets.
 	func setupTweetsTableView(withTweets tweetsList: [tweetModel]) {
 		tweets = tweetsList
 		tweetsTableView.estimatedRowHeight = 120
@@ -62,6 +74,8 @@ class FollowerDetailsViewController: UIViewController {
 	}
 }
 
+
+//MARK: - Tableview
 extension FollowerDetailsViewController: UITableViewDelegate, UITableViewDataSource {
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1

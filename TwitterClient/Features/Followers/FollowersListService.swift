@@ -14,6 +14,11 @@ class FollowersListService: NSObject {
 	let reachability: Reachability = Reachability()!
 	var followersListObject: FollowersListModel?
 	
+	
+	
+	/// Retreives list of followers and handles the response.
+	///
+	/// - Parameter completion: Request completion handler.
 	func getFollowersList(withCompletion completion: @escaping FollowersCompletionClosure) {
 		
 		if reachability.connection != .none  {
@@ -33,7 +38,6 @@ class FollowersListService: NSObject {
 					completion(responseObject, nil)
 				}
 			}
-			
 		}
 	}
 

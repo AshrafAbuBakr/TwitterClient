@@ -35,3 +35,31 @@ class RealmHandler: NSObject {
 		}
 	}
 }
+
+//MARK: - Tweets
+extension RealmHandler {
+	class func getSavedTweets(forScreenName screenName: String) -> [tweetModel]? {
+		do {
+			let realm = try Realm()
+			let tweets = realm.objects(tweetModel.self).filter("userScreenName = '\(screenName)'")
+				return Array(tweets)
+		} catch {
+			print(error.localizedDescription)
+			return nil
+		}
+	}
+	
+	class func saveTweets(_ tweets: [tweetModel]) {
+		for tweet in tweets {
+			do {
+				let realm = try Realm()
+				try realm.write {
+					realm.add(tweet, update: true)
+				}
+			} catch {
+				print(error.localizedDescription)
+			}
+		}
+	}
+	
+}

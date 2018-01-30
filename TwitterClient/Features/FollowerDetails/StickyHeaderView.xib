@@ -31,10 +31,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4m-ta-bl3">
                     <rect key="frame" x="1" y="1" width="375" height="300"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QNc-y6-klW">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QNc-y6-klW">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="234"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gCY-p6-8Po">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gCY-p6-8Po">
                             <rect key="frame" x="152" y="197" width="70" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="0uE-Cx-XEZ"/>

@@ -10,14 +10,17 @@ import UIKit
 import XLPagerTabStrip
 import RealmSwift
 
-class FollowersListViewController: UIViewController {
+class FollowersListViewController: UIViewController, BaseViewProtocol {
 
+	//MARK: - Outlets
 	@IBOutlet weak var followersTableView: UITableView!
+	@IBOutlet weak var noFollowersAvailableLabel: UILabel!
+	
 	var presenter: FollowersListPresenter?
 	var followers: List<FollowersModel>?
 	var selectedFollower: FollowersModel?
 	
-    override func viewDidLoad() {
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
